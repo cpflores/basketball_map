@@ -10,5 +10,30 @@
 
 <%= yield %>
 
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC7B_uc7RTcpTTrfqpqHu0XJu3z6o3K8wU&sensor=false"> </script>
+
+<script type="text/javascript">
+function initialize(latitude, longitude) {
+  var mapOptions = {
+      center: new google.maps.LatLng(latitude, longitude),
+      zoom: 15,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+  };
+  var map = new google.maps.Map(document.getElementById("map_canvas"),
+      mapOptions);
+}
+ 
+$(function() {
+  initialize(latitude, longitude);
+});
+ 
+var latitude  = 40.726477<%#= @latit %>;
+var longitude = -73.981534<%#= @longt %>;
+ 
+</script>
+
+<%= link_to "New Marker", new_address_path %>
+<%= link_to "| Back to Notes", notes_path %>
+
 </body>
 </html>
