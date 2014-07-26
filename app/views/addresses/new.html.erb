@@ -1,0 +1,7 @@
+Add a new Marker!
+ 
+<%= form_for @address do |f| %>
+  <%= f.text_field :address, :placeholder => "Address" %>
+  <%= f.text_field :description, :placeholder => "Description"%><br>
+  <%= f.submit "Add" %>
+<% end %> 
